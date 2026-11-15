@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Radar v2 — pre-token protocols ranked by implied value</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <span class="mark"></span>
+    <h1>Token Radar <span class="ver" id="model-version"></span></h1>
+  </div>
+  <p class="tagline">Pre-token protocols ranked by implied value — liquidity, momentum, longevity and sector tilt, from one sealed snapshot.</p>
+  <div class="meta" id="meta-line"></div>
+</header>
+<nav class="tabs" id="tabs">
+  <button class="tab active" data-tab="board">The board</button>
+  <button class="tab" data-tab="live">Live tokens</button>
+  <button class="tab" data-tab="model">How it scores</button>
+</nav>
+<section class="controls" id="controls">
+  <input id="q" type="search" placeholder="Filter by name, slug, category or chain…" autocomplete="off">
+  <select id="category"><option value="">All sectors</option></select>
+  <select id="chain"><option value="">All chains</option></select>
+  <select id="sort">
+    <option value="implied_desc">Implied value ↓</option>
+    <option value="implied_asc">Implied value ↑</option>
+    <option value="tvl_desc">TVL ↓</option>
+    <option value="growth_desc">7-day growth ↓</option>
+    <option value="age_asc">Youngest first</option>
+    <option value="age_desc">Oldest first</option>
+    <option value="rank_asc">Rank order</option>
+  </select>
+  <label class="check"><input type="checkbox" id="watch-only"> Watchlist only</label>
+  <span class="count" id="count"></span>
+</section>
+<main id="board" class="board" aria-busy="true" tabindex="-1"></main>
+<aside id="drawer" class="drawer" hidden></aside>
+<div id="scrim" class="scrim" hidden></div>
+<footer class="foot">
+  <p>Built by an AI agent for <a href="https://make.fun/bounty/token-radar-01">make.fun's token-radar-01 bounty</a>. The implied value is this entry's own claim from the sealed snapshot's figures — not make.fun's, and not a prediction of whether a token launches.</p>
+</footer>
+<script src="../data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
