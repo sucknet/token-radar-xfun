@@ -176,7 +176,7 @@ const radar: RadarData = {
 };
 
 mkdirSync(out, { recursive: true });
-writeFileSync(join(out, 'board.json'), JSON.stringify({ model_version: MODEL_VERSION, median_tvl: median, rows: board }, null, 1));
+writeFileSync(join(out, 'board.json'), JSON.stringify({ model_version: MODEL_VERSION, median_tvl: median, rows: board }));
 writeFileSync(join(out, 'data.js'), `window.RADAR=${JSON.stringify(radar)};\n`);
 cpSync(join(here, 'dashboard'), join(out, 'dashboard'), { recursive: true });
 cpSync(join(here, 'screenshots'), join(out, 'screenshots'), { recursive: true });
